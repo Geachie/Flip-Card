@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  color: #444444;
+}
+.post-wrap {
+  margin: auto;
+  width: 320px;
+  height: 420px;
+  perspective: 1000px;
+}
+.post {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.post-front,
+.post-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.post-back {
+  transform: rotateY(180deg);
+  background-color: blue;
+}
+
+.post-front,
+.post-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.post-wrap:hover .post {
+  transform: rotateY(180deg);
+}
+
+.post {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
